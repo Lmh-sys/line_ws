@@ -1,0 +1,8 @@
+<launch>
+  <!-- 开启RGB摄像头  -->
+  <include file="$(find astra_camera)/launch/dabai_u3.launch" />
+  <!-- 开启巡线节点  -->
+  <node name='line_tracker' pkg="simple_follower" type="line_follow.py"/>
+  <!-- 开启机器人底层相关节点  -->
+  <include file="$(find scout_bringup)/launch/scout_minimal.launch" />
+</launch>
