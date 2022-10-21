@@ -15,10 +15,6 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 generate_dynamic_reconfigure_options(
-  cfg/arPID.cfg
-  cfg/laser_params.cfg
-  cfg/Params_color.cfg
-  cfg/Params_PID.cfg
 )
 
 ## System dependencies are found with CMake's conventions
@@ -55,10 +51,9 @@ generate_dynamic_reconfigure_options(
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
- add_message_files(
-   FILES
-   position.msg
- )
+#  add_message_files(
+#    FILES
+#  )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -160,10 +155,10 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  scripts/line_follow.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS simple_follower simple_follower_node
@@ -179,15 +174,6 @@ include_directories(
 #   PATTERN ".svn" EXCLUDE
 # )
 
-add_executable(avoidance src/avoidance.cpp)
-add_dependencies(avoidance ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(avoidance ${catkin_LIBRARIES})
-
-
-
-add_executable(obs_avo src/obs_avo.cpp)
-add_dependencies(obs_avo ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(obs_avo ${catkin_LIBRARIES})
 
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
