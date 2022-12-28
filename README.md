@@ -7,7 +7,7 @@ catkin_make
 source devel/setup.bash 
 ```
 ## 运行
-**开启地盘通信**
+**开启底盘通信**
 ```
 cd ~/catkin_ws
 ./src/scout_base/scout_bringup/scripts/bringup_can2usb.bash
