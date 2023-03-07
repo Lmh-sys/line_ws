@@ -1,3 +1,4 @@
+[![Security Status](https://s.murphysec.com/badge/Lmh-sys/line_ws.svg)](https://www.murphysec.com/p/Lmh-sys/line_ws)
 # line_ws
 ## 编译
 ```
